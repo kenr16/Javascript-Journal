@@ -14,4 +14,10 @@ Journal.prototype.vowels = function(entry) {
   return entry.body.match(/[aeiou]/gi).length;
 }
 
-// exports.journalModule = Journal;
+Journal.prototype.getTeaser = function(entry) {
+  let teaser_array = entry.body.split(".");
+  let teaser = teaser_array[0].split(" ").slice(0, 8).join(" ");
+  return teaser;
+}
+
+exports.journalModule = Journal;
